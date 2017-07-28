@@ -27,23 +27,23 @@ class MerchantDefinedFields implements \JsonSerializable
         return $merchantDefinedFields;
     }
     
-    function getId()
+    public function getId()
     {
         return $this->id;
     }
 
-    function getValue() 
+    public function getValue() 
     {
         return $this->value;
     }
 
-    function setId($id) 
+    public function setId($id) 
     {
         $this->id = $id;
         return $this;
     }
 
-    function setValue($value)
+    public function setValue($value)
     {
         $this->value = $value;
         return $this;

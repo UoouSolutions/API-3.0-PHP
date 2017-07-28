@@ -47,34 +47,34 @@ class Shipping implements \JsonSerializable
         return $shipping;
     }
     
-    function getAddressee()
+    public function getAddressee()
     {
         return $this->addressee;
     }
 
-    function getMethod()
+    public function getMethod()
     {
         return $this->method;
     }
 
-    function getPhone()
+    public function getPhone()
     {
         return $this->phone;
     }
 
-    function setAddressee($addressee)
+    public function setAddressee($addressee)
     {
         $this->addressee = $addressee;
         return $this;
     }
 
-    function setMethod($method) 
+    public function setMethod($method) 
     {
         $this->method = $method;
         return $this;
     }
 
-    function setPhone($phone) 
+    public function setPhone($phone) 
     {
         $this->phone = $phone;
         return $this;

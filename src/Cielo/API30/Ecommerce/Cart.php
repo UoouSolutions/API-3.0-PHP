@@ -8,7 +8,7 @@ class Cart implements \JsonSerializable
 
     private $returnsAccepted;
     
-    private $items;
+    private $items = array();
     
     public function jsonSerialize()
     {
@@ -19,11 +19,7 @@ class Cart implements \JsonSerializable
     {
         $this->isGift = isset($data->IsGift) ? $data->IsGift : null;
         $this->returnsAccepted = isset($data->ReturnsAccepted) ? $data->ReturnsAccepted : null;
-                
-        if (isset($data->Items)) {
-            $this->items = new Items();
-            $this->items->populate($data->Items);
-        }
+        $this->items = isset($data->Items) ? $data->Items : null;
     }
     
     public static function fromJson($json)
@@ -34,35 +30,35 @@ class Cart implements \JsonSerializable
         return $cart;
     }
     
-    function getIsGift() 
+    public function getIsGift() 
     {
         return $this->isGift;
     }
 
-    function getReturnsAccepted() 
+    public function getReturnsAccepted() 
     {
         return $this->returnsAccepted;
     }
 
-    function setIsGift($isGift) 
+    public function setIsGift($isGift) 
     {
         $this->isGift = $isGift;
         return $this;
     }
 
-    function setReturnsAccepted($returnsAccepted) 
+    public function setReturnsAccepted($returnsAccepted) 
     {
         $this->returnsAccepted = $returnsAccepted;
         return $this;
     }
     
-    function getItems()
+    public function getItems()
     {
         return $this->items;
     }
     
     
-    function setItems(Items $items) 
+    public function setItems(array $items) 
     {
         $this->items = $items;
         return $this;

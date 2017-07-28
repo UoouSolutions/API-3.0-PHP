@@ -10,8 +10,6 @@ class Sale implements \JsonSerializable
 
     private $payment;
     
-    private $fraudAnalysis;
-
     public function __construct($merchantOrderId = null)
     {
         $this->setMerchantOrderId($merchantOrderId);
@@ -38,11 +36,6 @@ class Sale implements \JsonSerializable
         
         if (isset($dataProps['MerchantOrderId'])) {
             $this->merchantOrderId = $data->MerchantOrderId;
-        }
-        
-        if (isset($dataProps['FraudAnalysis'])) {
-            $this->fraudAnalysis = new FraudAnalysis();
-            $this->fraudAnalysis->populate($data->FraudAnalysis);
         }
     }
 
@@ -104,17 +97,6 @@ class Sale implements \JsonSerializable
     public function setPayment(Payment $payment)
     {
         $this->payment = $payment;
-        return $this;
-    }
-    
-    function getFraudAnalysis()
-    {
-        return $this->fraudAnalysis;
-    }
-
-    function setFraudAnalysis(FraudAnalysis $fraudAnalysis)
-    {
-        $this->fraudAnalysis = $fraudAnalysis;
         return $this;
     }
 

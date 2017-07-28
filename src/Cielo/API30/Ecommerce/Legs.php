@@ -27,23 +27,23 @@ class Legs implements \JsonSerializable
         return $legs;
     }
 
-    function getDestination() 
+    public function getDestination() 
     {
         return $this->destination;
     }
 
-    function getOrigin() 
+    public function getOrigin() 
     {
         return $this->origin;
     }
 
-    function setDestination($destination) 
+    public function setDestination($destination) 
     {
         $this->destination = $destination;
         return $this;
     }
 
-    function setOrigin($origin)
+    public function setOrigin($origin)
     {
         $this->origin = $origin;
         return $this;

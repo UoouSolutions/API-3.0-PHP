@@ -3,9 +3,6 @@ namespace Cielo\API30\Ecommerce;
 
 class Items implements \JsonSerializable
 {
-    const TYPE_PRIVATE_BUYER = 'CN';
-    
-    const TYPE_BUSINESS_BUYER = 'CP';
     
     const YES = 'Yes';
     
@@ -82,155 +79,155 @@ class Items implements \JsonSerializable
         return $items;
     }
     
-    function getGiftCategory() 
+    public function getGiftCategory() 
     {
         return $this->giftCategory;
     }
 
-    function getHostHedge()
+    public function getHostHedge()
     {
         return $this->hostHedge;
     }
 
-    function getNonSensicalHedge() 
+    public function getNonSensicalHedge() 
     {
         return $this->nonSensicalHedge;
     }
 
-    function getObscenitiesHedge() 
+    public function getObscenitiesHedge() 
     {
         return $this->obscenitiesHedge;
     }
 
-    function getPhoneHedge()
+    public function getPhoneHedge()
     {
         return $this->phoneHedge;
     }
 
-    function getName() 
+    public function getName() 
     {
         return $this->name;
     }
 
-    function getQuantity() 
+    public function getQuantity() 
     {
         return $this->quantity;
     }
 
-    function getSku() 
+    public function getSku() 
     {
         return $this->sku;
     }
 
-    function getUnitPrice()
+    public function getUnitPrice()
     {
         return $this->unitPrice;
     }
 
-    function getRisk()
+    public function getRisk()
     {
         return $this->risk;
     }
 
-    function getTimeHedge() 
+    public function getTimeHedge() 
     {
         return $this->timeHedge;
     }
 
-    function getType()
+    public function getType()
     {
         return $this->type;
     }
 
-    function getVelocityHedge()
+    public function getVelocityHedge()
     {
         return $this->velocityHedge;
     }
 
-    function setGiftCategory($giftCategory) 
+    public function setGiftCategory($giftCategory) 
     {
         $this->giftCategory = $giftCategory;
         return $this;
     }
 
-    function setHostHedge($hostHedge)
+    public function setHostHedge($hostHedge)
     {
         $this->hostHedge = $hostHedge;
         return $this;
     }
 
-    function setNonSensicalHedge($nonSensicalHedge) 
+    public function setNonSensicalHedge($nonSensicalHedge) 
     {
         $this->nonSensicalHedge = $nonSensicalHedge;
         return $this;
     }
 
-    function setObscenitiesHedge($obscenitiesHedge) 
+    public function setObscenitiesHedge($obscenitiesHedge) 
     {
         $this->obscenitiesHedge = $obscenitiesHedge;
         return $this;
     }
 
-    function setPhoneHedge($phoneHedge) 
+    public function setPhoneHedge($phoneHedge) 
     {
         $this->phoneHedge = $phoneHedge;
         return $this;
     }
 
-    function setName($name)
+    public function setName($name)
     {
         $this->name = $name;
         return $this;
     }
 
-    function setQuantity($quantity) 
+    public function setQuantity($quantity) 
     {
         $this->quantity = $quantity;
         return $this;
     }
 
-    function setSku($sku)
+    public function setSku($sku)
     {
         $this->sku = $sku;
         return $this;
     }
 
-    function setUnitPrice($unitPrice) 
+    public function setUnitPrice($unitPrice) 
     {
         $this->unitPrice = $unitPrice;
         return $this;
     }
 
-    function setRisk($risk) 
+    public function setRisk($risk) 
     {
         $this->risk = $risk;
         return $this;
     }
 
-    function setTimeHedge($timeHedge) 
+    public function setTimeHedge($timeHedge) 
     {
         $this->timeHedge = $timeHedge;
         return $this;
     }
 
-    function setType($type) 
+    public function setType($type) 
     {
         $this->type = $type;
         return $this;
     }
 
-    function setVelocityHedge($velocityHedge) 
+    public function setVelocityHedge($velocityHedge) 
     {
         $this->velocityHedge = $velocityHedge;
         return $this;
     }
     
-    function getPassenger() 
+    public function getPassenger() 
     {
         return $this->passenger;
     }
 
-    function setPassenger(Passenger $passenger) 
+    public function setPassenger(Passenger $passenger) 
     {
         $this->passenger = $passenger;
         return $this;

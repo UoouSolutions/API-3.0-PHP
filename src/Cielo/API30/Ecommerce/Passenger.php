@@ -53,67 +53,67 @@ class Passenger implements \JsonSerializable
         return $passenger;
     }
     
-    function getEmail() 
+    public function getEmail() 
     {
         return $this->email;
     }
 
-    function getIdentity() 
+    public function getIdentity() 
     {
         return $this->identity;
     }
 
-    function getName() 
+    public function getName() 
     {
         return $this->name;
     }
 
-    function getRating() 
+    public function getRating() 
     {
         return $this->rating;
     }
 
-    function getPhone()
+    public function getPhone()
     {
         return $this->phone;
     }
 
-    function getStatus()
+    public function getStatus()
     {
         return $this->status;
     }
 
-    function setEmail($email)
+    public function setEmail($email)
     {
         $this->email = $email;
         return $this;
     }
 
-    function setIdentity($identity) 
+    public function setIdentity($identity) 
     {
         $this->identity = $identity;
         return $this;
     }
 
-    function setName($name) 
+    public function setName($name) 
     {
         $this->name = $name;
         return $this;
     }
 
-    function setRating($rating) 
+    public function setRating($rating) 
     {
         $this->rating = $rating;
         return $this;
     }
 
-    function setPhone($phone) 
+    public function setPhone($phone) 
     {
         $this->phone = $phone;
         return $this;
     }
 
-    function setStatus($status) 
+    public function setStatus($status) 
     {
         $this->status = $status;
         return $this;

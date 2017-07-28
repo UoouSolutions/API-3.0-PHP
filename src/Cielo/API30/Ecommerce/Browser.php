@@ -47,56 +47,56 @@ class Browser implements \JsonSerializable
         return $browser;
     }
     
-    function getCookiesAccepted()
+    public function getCookiesAccepted()
     {
         return $this->cookiesAccepted;
     }
 
-    function getEmail()
+    public function getEmail()
     {
         return $this->email;
     }
 
-    function getHostName() 
+    public function getHostName() 
     {
         return $this->hostName;
     }
 
-    function getIpAddress() 
+    public function getIpAddress() 
     {
         return $this->ipAddress;
     }
 
-    function getType() 
+    public function getType() 
     {
         return $this->type;
     }
 
-    function setCookiesAccepted($cookiesAccepted) 
+    public function setCookiesAccepted($cookiesAccepted) 
     {
         $this->cookiesAccepted = $cookiesAccepted;
         return $this;
     }
 
-    function setEmail($email)
+    public function setEmail($email)
     {
         $this->email = $email;
         return $this;
     }
 
-    function setHostName($hostName) 
+    public function setHostName($hostName) 
     {
         $this->hostName = $hostName;
         return $this;
     }
 
-    function setIpAddress($ipAddress)
+    public function setIpAddress($ipAddress)
     {
         $this->ipAddress = $ipAddress;
         return $this;
     }
 
-    function setType($type)
+    public function setType($type)
     {
         $this->type = $type;
         return $this;

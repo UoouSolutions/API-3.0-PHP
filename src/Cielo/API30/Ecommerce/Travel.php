@@ -10,7 +10,7 @@ class Travel implements \JsonSerializable
     
     private $route;
     
-    private $legs;
+    private $legs = array();
     
     public function jsonSerialize()
     {
@@ -21,12 +21,8 @@ class Travel implements \JsonSerializable
     {
         $this->departureTime = isset($data->DepartureTime) ? $data->DepartureTime : null;
         $this->journeyType = isset($data->JourneyType) ? $data->JourneyType : null;
-        $this->route = isset($data->Route) ? $data->Route : null;
-        
-        if (isset($data->Legs)) {
-            $this->legs = new Legs();
-            $this->legs->populate($data->Legs);
-        }
+        $this->route = isset($data->Route) ? $data->Route : null;       
+        $this->legs = isset($data->RouLegste) ? $data->Legs : null;
     }
     
     public static function fromJson($json)
@@ -37,45 +33,45 @@ class Travel implements \JsonSerializable
         return $travel;
     }
 
-    function getDepartureTime() 
+    public function getDepartureTime() 
     {
         return $this->departureTime;
     }
 
-    function getJourneyType()
+    public function getJourneyType()
     {
         return $this->journeyType;
     }
 
-    function getRoute() 
+    public function getRoute() 
     {
         return $this->route;
     }
 
-    function getLegs() 
+    public function getLegs() 
     {
         return $this->legs;
     }
 
-    function setDepartureTime($departureTime) 
+    public function setDepartureTime($departureTime) 
     {
         $this->departureTime = $departureTime;
         return $this;
     }
 
-    function setJourneyType($journeyType) 
+    public function setJourneyType($journeyType) 
     {
         $this->journeyType = $journeyType;
         return $this;
     }
 
-    function setRoute($route)
+    public function setRoute($route)
     {
         $this->route = $route;
         return $this;
     }
 
-    function setLegs(Legs $legs) 
+    public function setLegs(array $legs) 
     {
         $this->legs = $legs;
         return $this;

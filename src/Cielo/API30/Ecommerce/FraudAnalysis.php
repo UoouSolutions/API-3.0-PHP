@@ -20,7 +20,7 @@ class FraudAnalysis implements \JsonSerializable
     
     private $cart;
     
-    private $merchantDefinedFields;
+    private $merchantDefinedFields = array();
     
     private $shipping;
     
@@ -42,6 +42,7 @@ class FraudAnalysis implements \JsonSerializable
         $this->sequence = isset($data->Sequence) ? $data->Sequence : null;
         $this->sequenceCriteria = isset($data->SequenceCriteria) ? $data->SequenceCriteria : null;
         $this->fingerPrintId = isset($data->FingerPrintId) ? $data->FingerPrintId : null;
+        $this->merchantDefinedFields = isset($data->MerchantDefinedFields) ? $data->MerchantDefinedFields : null;
     
         if (isset($data->Browser)) {
             $this->browser = new Browser();
@@ -51,11 +52,6 @@ class FraudAnalysis implements \JsonSerializable
         if (isset($data->Cart)) {
             $this->cart = new Cart();
             $this->cart->populate($data->Cart);
-        }
-        
-        if (isset($data->MerchantDefinedFields)) {
-            $this->merchantDefinedFields = new MerchantDefinedFields();
-            $this->merchantDefinedFields->populate($data->MerchantDefinedFields);
         }
         
         if (isset($data->Shipping)) {
@@ -82,122 +78,122 @@ class FraudAnalysis implements \JsonSerializable
         return $fraudAnalysis;
     }
 
-    function getSequence()
+    public function getSequence()
     {
         return $this->sequence;
     }
 
-    function getSequenceCriteria() 
+    public function getSequenceCriteria() 
     {
         return $this->sequenceCriteria;
     }
 
-    function getFingerPrintId()
+    public function getFingerPrintId()
     {
         return $this->fingerPrintId;
     }
 
-    function getBrowser() 
+    public function getBrowser() 
     {
         return $this->browser;
     }
 
-    function getCart() 
+    public function getCart() 
     {
         return $this->cart;
     }
 
-    function getMerchantDefinedFields() 
+    public function getMerchantDefinedFields() 
     {
         return $this->merchantDefinedFields;
     }
 
-    function getShipping()
+    public function getShipping()
     {
         return $this->shipping;
     }
 
-    function getTravel() 
+    public function getTravel() 
     {
         return $this->travel;
     }
 
-    function setSequence($sequence)
+    public function setSequence($sequence)
     {
         $this->sequence = $sequence;
         return $this;
     }
 
-    function setSequenceCriteria($sequenceCriteria) 
+    public function setSequenceCriteria($sequenceCriteria) 
     {
         $this->sequenceCriteria = $sequenceCriteria;
         return $this;
     }
 
-    function setFingerPrintId($fingerPrintId) 
+    public function setFingerPrintId($fingerPrintId) 
     {
         $this->fingerPrintId = $fingerPrintId;
         return $this;
     }
 
-    function setBrowser(Browser $browser)
+    public function setBrowser(Browser $browser)
     {
         $this->browser = $browser;
         return $this;
     }
 
-    function setCart(Cart $cart) 
+    public function setCart(Cart $cart) 
     {
         $this->cart = $cart;
         return $this;
     }
 
-    function setMerchantDefinedFields(MerchantDefinedFields $merchantDefinedFields) 
+    public function setMerchantDefinedFields(array $merchantDefinedFields) 
     {
         $this->merchantDefinedFields = $merchantDefinedFields;
         return $this;
     }
 
-    function setShipping(Shipping $shipping) 
+    public function setShipping(Shipping $shipping) 
     {
         $this->shipping = $shipping;
         return $this;
     }
 
-    function setTravel(Travel $travel) 
+    public function setTravel(Travel $travel) 
     {
         $this->travel = $travel;
         return $this;
     }
     
-    function getId() 
+    public function getId() 
     {
         return $this->id;
     }
 
-    function getStatus() 
+    public function getStatus() 
     {
         return $this->status;
     }
 
-    function getReplyData() 
+    public function getReplyData() 
     {
         return $this->replyData;
     }
 
-    function setId($id)
+    public function setId($id)
     {
         $this->id = $id;
         return $this;
     }
 
-    function setStatus($status) 
+    public function setStatus($status) 
     {
         $this->status = $status;
         return $this;
     }
 
-    function setReplyData(ReplyData $replyData) 
+    public function setReplyData(ReplyData $replyData) 
     {
         $this->replyData = $replyData;
         return $this;
