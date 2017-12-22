@@ -18,11 +18,11 @@ class QuerySaleRequest extends AbstractSaleRequest
         $this->environment = $environment;
     }
 
-    public function execute($paymentId)
+    public function execute($paymentId, $returnArray = false)
     {
         $url = $this->environment->getApiQueryURL() . '1/sales/' . $paymentId;
-        
-        return $this->sendRequest('GET', $url);
+
+        return $this->sendRequest('GET', $url, null, $returnArray);
     }
 
     protected function unserialize($json)

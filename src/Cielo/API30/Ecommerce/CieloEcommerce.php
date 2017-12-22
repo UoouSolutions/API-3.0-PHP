@@ -69,11 +69,11 @@ class CieloEcommerce
      *      "https://developercielo.github.io/Webservice-3.0/english.html#error-codes">Error
      *      Codes</a>
      */
-    public function getSale($paymentId)
+    public function getSale($paymentId, $returnArray = false)
     {
         $querySaleRequest = new QuerySaleRequest($this->merchant, $this->environment);
 
-        return $querySaleRequest->execute($paymentId);
+        return $querySaleRequest->execute($paymentId, $returnArray);
     }
 
     /**

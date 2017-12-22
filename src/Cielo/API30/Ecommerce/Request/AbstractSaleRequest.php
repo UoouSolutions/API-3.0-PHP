@@ -18,7 +18,7 @@ abstract class AbstractSaleRequest
 
     protected abstract function unserialize($json);
 
-    protected function sendRequest($method, $url, Sale $sale = null)
+    protected function sendRequest($method, $url, Sale $sale = null, $returnArray = false)
     {
         $headers = [
             'Accept: application/json',
@@ -63,7 +63,11 @@ abstract class AbstractSaleRequest
         }
         
         curl_close($curl);
-        
+
+        if ($returnArray) {
+            return json_decode($response, true);
+        }
+
         return $this->readResponse($statusCode, $response);
     }
 
